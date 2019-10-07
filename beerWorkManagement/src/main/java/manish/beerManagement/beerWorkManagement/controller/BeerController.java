@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,9 +49,9 @@ public class BeerController {
 	
 	@PutMapping("/{beerId}")
 	@ResponseStatus(code = HttpStatus.OK)
-	public void updateBeer(@PathVariable("beerId") UUID beerId) {
+	public ResponseEntity updateBeer(@PathVariable("beerId") UUID beerId ,@RequestBody BeerDto beerdto) {
 		
-		System.out.println("Beer updated successfullyu"+beerId);
+				return new ResponseEntity(HttpStatus.NO_CONTENT);
 	}
 	
 	
