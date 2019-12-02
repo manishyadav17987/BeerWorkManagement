@@ -26,9 +26,6 @@ public class BeerController {
     @Autowired
 	private BeerService beerservice;
 	
-	
-	
-
 	@GetMapping(path="/{beerid}")
 	public ResponseEntity<BeerDto> getBeet(@PathVariable("beerid") UUID beerId){
 		System.out.println(beerId);
@@ -59,6 +56,10 @@ public class BeerController {
 	@DeleteMapping("/{beerId}")
 	public void deleteBeer(@PathVariable("beerId") UUID beerUuid) {
 		System.out.println("BeerDeleted  having Id"+beerUuid);
+	}
+	
+	public void optionMethod() {
+		System.out.println("option  having Id");
 	}
 	
 	
